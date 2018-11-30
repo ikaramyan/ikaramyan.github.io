@@ -31,7 +31,7 @@ a {
 }
 
 a:focus, a:hover {
-  color: #0085A1;
+  color: #1e88e5;
 }
 
 blockquote {
@@ -98,7 +98,8 @@ img::-moz-selection {
   color: #343a40;
 }
 
-#mainNav .navbar-nav > li.nav-item > a {
+#mainNav .navbar-nav > li.nav-item > a, #mainNav .navbar-nav > div > li.nav-item > a, #mainNav .navbar-nav > 
+div > li > a {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -117,11 +118,13 @@ img::-moz-selection {
   #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
     color: rgba(255, 255, 255, 0.8);
   }
-  #mainNav .navbar-nav > li.nav-item > a {
-    padding: 10px 20px;
-    color: #fff;
+  .navbar-nav > li.nav-item > a, .navbar-nav > div > li.nav-item > a {
+    padding: 10px 20px !important;
+    color: #fff !important;
   }
-  #mainNav .navbar-nav > li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover {
+
+
+  #li.nav-item > a:focus, #mainNav .navbar-nav > li.nav-item > a:hover, #mainNav .navbar-nav > div > li.nav-item > a:hover {
     color: rgba(255, 255, 255, 0.8);
   }
 }
@@ -142,7 +145,7 @@ img::-moz-selection {
   #mainNav.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
     position: fixed;
-    top: -67px;
+    /*top: -67px;*/
     -webkit-transition: -webkit-transform 0.2s;
     -moz-transition: -moz-transform 0.2s;
     transition: transform 0.2s;
@@ -155,11 +158,11 @@ img::-moz-selection {
   #mainNav.is-fixed .navbar-brand:focus, #mainNav.is-fixed .navbar-brand:hover {
     color: #0085A1;
   }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a {
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a, #mainNav.is-fixed .navbar-nav > div > li.nav-item > a {
     color: #212529;
   }
-  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
-    color: #0085A1;
+  #mainNav.is-fixed .navbar-nav > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > div > li.nav-item > a:focus, #mainNav.is-fixed .navbar-nav > li.nav-item > a:hover {
+    color: #2196f3
   }
   #mainNav.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -189,14 +192,25 @@ header.masthead .overlay {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #212529;
-  opacity: 0.5;
+  background-color: #FFFFFF;
+  opacity: 1;
 }
+
+#pictureBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: .5;
+}
+
 
 header.masthead .page-heading,
 header.masthead .post-heading,
 header.masthead .site-heading {
-  padding: 200px 0 150px;
+  padding: 125px 0 150px;
   color: white;
 }
 
@@ -208,19 +222,38 @@ header.masthead .site-heading {
   }
 }
 
+@media only screen and (min-width: 768px) {
+  #homeTitle .page-heading,
+  #homeTitle .post-heading,
+  #homeTitle .site-heading {
+    padding: 125px 0;
+  }
+}
+
 header.masthead .page-heading,
 header.masthead .site-heading {
   text-align: center;
 }
 
-header.masthead .page-heading h1,
-header.masthead .site-heading h1 {
-  font-size: 50px;
+#homeTitle .page-heading h1,
+#homeTitle .site-heading h1 {
+  font-family:'Cormorant Garamond', serif;
+  color: hsl(14, 73%, 56%);
+  font-size: 80px;
   margin-top: 0;
 }
 
-header.masthead .page-heading .subheading,
-header.masthead .site-heading .subheading {
+/*header.masthead .page-heading h1,
+header.masthead .site-heading h1 {
+  font-family:'Cormorant Garamond', serif;
+  color: hsl(14, 73%, 56%);
+  font-size: 50px;
+  margin-top: 0;
+}
+*/
+#homeTitle .page-heading .subheading,
+#homeTitle .site-heading .subheading {
+  color: hsl(14, 73%, 56%);
   font-size: 24px;
   font-weight: 300;
   line-height: 1.1;
@@ -279,7 +312,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > a:focus, .post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #1e88e5;
 }
 
 .post-preview > a > .post-title {
@@ -307,7 +340,7 @@ header.masthead .post-heading .meta a {
 
 .post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
   text-decoration: underline;
-  color: #0085A1;
+  color: hsl(14, 80%, 58%);
 }
 
 @media only screen and (min-width: 768px) {
@@ -404,17 +437,82 @@ footer .copyright {
 }
 
 .btn-primary {
-  background-color: #0085A1;
-  border-color: #0085A1;
+  background-color: #2196f3;
+  border-color: #2196f3;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   color: #fff;
-  background-color: #00657b !important;
-  border-color: #00657b !important;
+  background-color: #1e88e5 !important;
+  border-color: #1e88e5 !important;
 }
 
 .btn-lg {
   font-size: 16px;
   padding: 25px 35px;
 }
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {color: #1e88e5;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+
+#mainNav .dropdown > li > a:hover {
+  text-decoration: none;
+  /*color: #1e88e5 !important;*/
+}
+
+#homePage:hover {
+  color: #1e88e5 !important;
+}
+
+#homePage {
+  color: #212529 !important;
+}
+
+.dropdown-content > a {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
