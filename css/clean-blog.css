@@ -23,6 +23,15 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#recentWork {
+
+}
+
 a {
   color: #212529;
   -webkit-transition: all 0.2s;
@@ -218,7 +227,7 @@ header.masthead .site-heading {
   header.masthead .page-heading,
   header.masthead .post-heading,
   header.masthead .site-heading {
-    padding: 200px 0;
+    padding: 250px 0;
   }
 }
 
@@ -226,7 +235,7 @@ header.masthead .site-heading {
   #homeTitle .page-heading,
   #homeTitle .post-heading,
   #homeTitle .site-heading {
-    padding: 125px 0;
+    /*padding: 125px 0;*/
   }
 }
 
